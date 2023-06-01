@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel o tijeras</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let jugador = 0;
+        let pc = 0;
+
+
+        function azar() {
+            return Math.floor((Math.random() * 3) + 1);
+}
+        
+
+            while(jugador != 3 && pc != 3 ){
+                
+                var eleccionJugador = Number(prompt("Toma tu eleccion\n\n1.Piedra 🪨\n2. Papel 🧻\n3. Tijeras ✂️"))
+                var eleccionPC = Number(azar())
+
+
+                if (eleccionJugador == 1){
+                    alert("Eligiste Piedra 🪨")
+                }
+                if (eleccionJugador == 2){
+                    alert("Eligiste Papel 🧻")
+                }
+                if (eleccionJugador == 3){
+                    alert("Eligiste Tijeras ✂️")
+                }
+
+                if (eleccionPC == 1){
+                    alert("Pc Elige Piedra 🪨")
+                }
+                if (eleccionPC == 2){
+                    alert("Pc Elige Papel 🧻")
+                }
+                if (eleccionPC == 3){
+                    alert("Pc Elige Tijeras ✂️")
+                }
+
+
+                if (eleccionJugador == 1 && eleccionPC == 3 || eleccionJugador == 2 && eleccionPC == 1 || eleccionJugador == 3 && eleccionPC == 2){
+
+                    alert("Punto para el jugador ❤️😍")
+                    jugador = jugador + 1}
+
+                if (eleccionJugador == 3 && eleccionPC == 1 || eleccionJugador == 1 && eleccionPC == 2 || eleccionJugador == 2 && eleccionPC == 3){
+
+                    alert("Punto para el PC 😖🥵")
+                    pc = pc + 1}
+
+                
+                if (eleccionJugador == 3 && eleccionPC == 3 || eleccionJugador == 1 && eleccionPC == 1 || eleccionJugador == 2 && eleccionPC == 2){
+
+                    alert("Empate punto para nadie 👻🤡☠️")}
+                    
+
+
+                alert(`El puntaje es \n Jugador ${jugador}\n Pc ${pc}`)
+                
+                if (jugador == 3){
+                alert("Ganara el Jugador 🎉🎉🎉🎉😊😊😊😊")
+                }
+                
+                if (pc == 3){
+                    alert("Gana el Pc 🤢🤢🤢🤢🤮🤮🤮🤮")
+                }
+
+                if (jugador == 3 || pc == 3 ){
+                let reiniciar = confirm("Quieres jugar otra partifa")
+
+                if (reiniciar == true){
+                    jugador = 0
+                    pc = 0
+                }}
+            }
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

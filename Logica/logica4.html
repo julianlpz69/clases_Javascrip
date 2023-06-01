@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica1</title>
+</head>
+<body>
+
+    <script>
+
+    // 4. Construir el algoritmo que solicite el nombre y edad de 3
+    // personas y determine el nombre de la persona con mayor edad.
+
+
+    let nombre1 = prompt("Ingresa el nombre de la primera persona")
+    let edad1 = Number(prompt("Ingresa la edad de la primera personas"))
+    let nombre2 = prompt("Ingresa el nombre de la segunda persona")
+    let edad2 = Number(prompt("Ingresa la edad de la segunda personas"))
+    let nombre3 = prompt("Ingresa el nombre de la tercera persona")
+    let edad3 = Number(prompt("Ingresa la edad de la tercera personas"))
+
+
+
+    if (edad1 > edad2 && edad1 > edad3){
+        alert(`La persona de mayor edad es ${nombre1}`)
+    }
+
+    if (edad2 > edad1 && edad2 > edad3){
+        alert(`La persona de mayor edad es ${nombre2}`)
+    }
+
+    if (edad3 > edad1 && edad3 > edad2){
+        alert(`La persona de mayor edad es ${nombre3}`)
+    }
+
+    </script>
+
+
+</body>
+</html>

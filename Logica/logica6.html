@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica1</title>
+</head>
+<body>
+
+    <script>
+
+    // 6. Construir el algoritmo en Javascript para un programa
+    // para cualquier cantidad de estudiantes que lea el nombre,
+    // el sexo y la nota definitiva y halle al estudiante con la mayor
+    // nota y al estudiante con la menor nota y cuantos eran
+    // hombres y cuantos mujeres.
+
+
+    let nombre = []
+    let hombres = 0
+    let mujeres = 0
+    let nota = []
+
+    let cantidad = Number(prompt("Cuantos estudiantes deseas ingresar"))
+    do{ 
+        
+        nombre.push(prompt("Ingresa el nombre del estudiante"))
+
+
+        sexo = Number(prompt("¿De que sexo es el estudiante?\n1. Hombre\n2. Mujer\n 3. Soy raro"))
+
+        if (sexo == 1){
+            hombres = hombres + 1
+        }
+
+        if (sexo == 2){
+            mujeres = mujeres + 1
+        }
+
+
+        nota.push(Number(prompt("Ingresa la nota final del estudiante")))
+
+    
+        cantidad = cantidad - 1
+    }
+
+    while(cantidad > 0)
+
+
+    let mejorNota = Math.max(...nota)
+    let indiceMejorNota = nota.indexOf(mejorNota)
+
+    
+    let PeorNota = Math.min(...nota)
+    let indicePeorNota = nota.indexOf(PeorNota)
+
+    
+
+
+
+
+    alert(`El estudiante con la mayor nota es ${nombre[indiceMejorNota]} \nEl estudiante con la menor nota es ${nombre[indicePeorNota]}  \nHay ${hombres} hombre\nHay ${mujeres} mujeres\n`)
+
+    </script>
+
+
+</body>
+</html>

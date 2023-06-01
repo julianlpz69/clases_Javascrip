@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica1</title>
+</head>
+<body>
+
+    <script>
+
+    
+    
+    function divisores (numero){
+
+        let exactos = 0
+        let sumar = 1
+        do{
+
+            
+            let division = numero/sumar 
+            
+
+                if (Number(numero)%sumar == 0){
+                    exactos = exactos + sumar
+                }
+
+            sumar = sumar + 1
+            
+            
+            
+        }
+
+        while(sumar != numero)
+
+        return(exactos)
+    }
+    
+
+    let number1 = Number(prompt("Digita el numero que deseas saber la suma de sus divisores exactos"))
+    let number2 = Number(prompt("Digita el numero que deseas saber la suma de sus divisores exactos"))
+
+    let resultado1 = divisores(number1)
+
+    let resultado2 = divisores(number2)
+
+    
+
+    if (resultado1==number2 && resultado2==number1){
+        alert("Esos dos numeros son amikos")
+    }
+
+    else{
+        alert("Esos dos numeros no son amikos")
+    }
+
+    
+    
+    </script>
+
+</body>
+</html>

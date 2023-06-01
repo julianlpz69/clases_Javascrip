@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica1</title>
+</head>
+<body>
+
+    <script>
+
+    // 10. Desarrolle un programa cíclico que capture un dato
+    // numérico cada vez, y los vaya acumulando. El programa se
+    // detiene cuando el usuario digita un cero. El programa debe
+    // mostrar: LA SUMATORIA DE LOS VALORES, EL VALOR DEL
+    // PROMEDIO, CUÁNTOS VALORES FUERON DIGITADOS, MAYOR
+    // VALOR Y MENOR VALOR.
+
+    
+    let Acumulador = []
+
+    let sumatoria = 0
+
+    
+
+    do{ 
+        
+        var dato = Number(prompt("Ingresa un dato"))
+        Acumulador.push(dato)
+        sumatoria = sumatoria + dato
+        
+    }
+
+    while(dato !== 0)
+
+    
+
+    Acumulador.pop()
+
+    let mejorAcumulador = Math.max(...Acumulador)
+    let indiceMejorAcumulador = Acumulador.indexOf(mejorAcumulador)
+
+    
+    let PeorAcumulador = Math.min(...Acumulador)
+    let indicePeorAcumulador = Acumulador.indexOf(PeorAcumulador)
+
+    
+
+    alert(`Fueron digitados ${Acumulador.length} valores\nLa suma de los valores es ${sumatoria}\nEl promedio de los valores es${sumatoria/Acumulador.length}\nEl mayor valor es ${Acumulador[indiceMejorAcumulador]}\nEl menor valor es ${Acumulador[indicePeorAcumulador]}\n`)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica1</title>
+</head>
+<body>
+
+    <script>
+        // 8. Programa que Ingrese por teclado:
+        // a. el valor del lado de un cuadrado para mostrar por pantalla el
+        // perímetro del mismo
+        // b. la base y la altura de un rectángulo para mostrar el área del
+        // mismo
+    
+
+        let opc = Number(prompt("Que deseas realizar \n1. Perimetro de un cuadrado\n2. Area de un Rectangulo\n 3. Nada"))
+
+
+        if (opc == 1){
+            
+            let lado = Number(prompt("Ingresa el valor de su lado"))
+
+            alert(`El perimetro de el cuadrado es ${lado*4}`)
+        }
+
+
+        if (opc == 2){
+            
+            let base = Number(prompt("Ingresa el valor de la base del rectangulo"))
+            let altura = Number(prompt("Ingresa el valor de la altura del rectangulo"))
+
+            alert(`El area de el Rectangulo es ${base*altura}`)
+        }
+        
+        if (opc ==3){
+            alert("vete a la verga")
+        }
+
+        else{
+            alert("valor equivocado")
+        }
+
+
+    </script>
+
+
+</body>
+</html>

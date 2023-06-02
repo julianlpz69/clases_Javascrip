@@ -1,0 +1,41 @@
+body{
+    background-color: orchid;
+}
+
+#papa{
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+h1{
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: 60px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#hijo{
+    text-align: center;
+    width: 80%;
+    min-height: 500px;
+    background-color: black;
+}
+
+#botones{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 60px;
+}
+button{
+    font-size: 30px;
+    width: 200px;
+    height: 50px;
+}

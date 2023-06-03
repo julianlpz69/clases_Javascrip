@@ -1,0 +1,43 @@
+*{
+    margin: 20px;
+}
+
+th , td{
+    width: 100%;
+    padding-left: 200px;
+    font-size: 20px;
+    border:blue solid;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+tr{
+    width: 100%;
+}
+
+h1{
+    font-size: 70px;
+    justify-content: center;
+    text-align: center;
+}
+.form-label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.form-control{
+    font-size: 20px;
+    border: 5px slateblue solid;
+}
+
+#btn1{
+    font-size: 30px;
+    color: aqua;
+    background-color: black;
+    width: 400px;
+
+}
+#botones{
+    justify-content: center;
+    text-align: center;
+}

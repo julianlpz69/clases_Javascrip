@@ -11,6 +11,10 @@ let numeros = []
 
 
 
+btn4.addEventListener("click",)
+
+
+
 const formu = document.getElementById('formulario');
 
 formu.addEventListener('submit', function(event) {

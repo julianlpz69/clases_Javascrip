@@ -1,3 +1,7 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #list{
     margin-left: 15rem;
 }
@@ -8,4 +12,9 @@
 
 label{
     margin-top: 20px !important;
+}
+
+#formulario-Clientes > h1{
+    font-size: 3.5rem;
+    font-family:fantasy;
 }

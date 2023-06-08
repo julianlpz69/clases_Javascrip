@@ -8,36 +8,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <header class="bg-black fs-5 fw-bold text-white text-center">Pagina Inicio</header>
+    <header class="bg-black fs-5 fw-bold text-white text-center container-fluid">Pagina Inicio</header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#"><img src="../leopard.png" alt=""></a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark container-fluid">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="" alt="">adfadf</a>
+          <a class="navbar-brand" href="#"><img src="" alt="">adfadf</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav col-6 justify-content-start">
-              <li class="nav-item">
-                <a class="nav-link" id="btn-clientes" href="#">logo</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" id="mostrarTodasLink" href="#">logo</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav col-6 justify-content-end">
+          <div class="collapse navbar-collapse col-6 justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" id="btn-clientes" href="#">Inicio</a>
+                  <a class="nav-link" id="inicio-link" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="eliminarLink" href="#">Clientes</a>
+                  <a class="nav-link" id="clientes-Link" href="#">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="eliminarLink" href="#">Rutas</a>
+                    <a class="nav-link" id="rutas-Link" href="#">Rutas</a>
                   </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="eliminarLink" href="#">Tiquetes</a>
+                    <a class="nav-link" id="tiquetes-Link" href="#">Tiquetes</a>
                 </li>
                
               </ul>
@@ -46,97 +38,110 @@
       </nav>
 
 
-    <form id="botones-clientes" class="">
-        <br><br><br>
-        <h1 class="text-center">¿Que deseas Realizar?</h1>
-        <div id="opc-clientes" class="navbar navbar-expand-lg navbar-dark bg-dark text-center justify-content-center w-50">
-            <ul class="navbar-nav text-center">
-                <li class="nav-item">
-                <a class="nav-link" id="btn-clientes" href="#">logo</a>
-                </li>
-                
-                <li class="nav-item">
-                <a class="nav-link" id="mostrarTodasLink" href="#">logo</a>
-                </li>
+    <form id="formularioClientes" class="container-fluid">
+      <br><br><br>
+      <h1 class="text-center">Interfaz para el control de los clientes de la empresa</h1>
+      <br>
+      <br><br><br>
+      <h2 class="text-center">¿Que Deseas Realizar?</h2>
+      <br>
+      <div id="opc-clientes" class="navbar navbar-expand-lg align-items-center navbar-dark bg-dark text-center justify-content-center w-50">
+          <ul class="navbar-nav text-center justify-content-center align-items-center gap-3">
+              <li class="nav-item">
+              <button class="nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-Agregar-clientes" href="#">Agregar Cliente</button>
+              </li>
+              
+              <li class="nav-item">
+              <button class="nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-Editar-clientes" href="#">Editar Datos De Cliente</button>
+              </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" id="mostrarTodasLink" href="#">logo</a>
-                </li>
-            </ul>
+              <li class="nav-item">
+                  <button class="nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-Eliminar-clientes" href="#">Eliminar Cliente</button>
+              </li>
+          </ul>
+      </div>
+
+      <br>
+
+      
+      <div id="formularioAgregarClientes" class="row d-none">
+
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación</label>
+          <input type="number" class="form-control" id="datoNumero" placeholder="Número" >
         </div>
-        <form id="formu2" class="container w-25 text-center border border-5 border-dark d-none">
+            
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombres</label>
+          <input type="text" class="form-control" id="datoNombres" placeholder="Nombres" >
+        </div>
+            
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Apellidos</label>
+          <input type="text" class="form-control" id="datoApellidos" placeholder="Apellidos" >
+        </div>
+            
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Teléfono</label>
+          <input type="number" class="form-control" id="datoTelefono" placeholder="Teléfono" >
+        </div>
+        
+        <div class="col-md-4 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Correo electrónico</label>
+          <input type="email" class="form-control" id="datoCorreo" placeholder="Correo electrónico" >
+        </div>
+        
+        <div class="col-md-4 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="datoFecha" placeholder="Fecha de nacimiento" >
+        </div>
+        
+        <div class="col-md-4 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nacionalidad</label>
+          <input type="text" class="form-control" id="datoNacionalidad" placeholder="Nacionalidad" >
+        </div>
+        
+        <br><br><br><br><br>
+        <div id="botones" class="text-center">
+          <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarAgregar" type="submit" >Confirmarrsds</button>
+        </div>
+      </div>
         <br><br>
-        <div class="row">
-            <div class="col-6">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación</label>
-                <input type="number" class="form-control" id="datoNumero" placeholder="Número" required>
-            </div>
-                
-            <div class="col-6">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombres</label>
-                <input type="text" class="form-control" id="datoNombres" placeholder="Nombres" required>
-            </div>
-                
-            <div class="col-6">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Apellidos</label>
-                <input type="text" class="form-control" id="datoApellidos" placeholder="Apellidos" required>
-            </div>
-                
-            <div class="col-6">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Teléfono</label>
-                <input type="number" class="form-control" id="datoTelefono" placeholder="Teléfono" required>
-            </div>
-            
-            <div class="col-4">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Correo electrónico</label>
-                <input type="email" class="form-control" id="datoCorreo" placeholder="Correo electrónico" required>
-            </div>
-            
-            <div class="col-4">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="datoFecha" placeholder="Fecha de nacimiento" required>
-            </div>
-            
-            <div class="col-4">
-                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nacionalidad</label>
-                <input type="text" class="form-control" id="datoNacionalidad" placeholder="Nacionalidad" required>
-            </div>
-            
-                <br><br><br><br><br>
-            <div id="botones" class="text-center">
-                <button class="fs-3 text-center bg-dark text-white fw-bold" id="btn4" type="submit" >Confirmar</button>
-            </div>
-        </div>
-        <br><br><br><br>
-    </form>
 
-        <section class="table-responsive border border-5 border-black m-5">
-            <table class="table text-center justify-content-center">
-                <thead>
-                  <tr class="fs-4 gap-5 text-center justify-content-center">
-                    <th scope="col">Número de <br>identificación</th>
-                    <th scope="col">Nombres</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Correo electrónico</th>
-                    <th scope="col">Fecha de nacimiento</th>
-                    <th scope="col">Nacionalidad</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                
-                </tbody>
-            </table>
-        </section>
+
+        <div id="formulario-Eliminar-Clientes" class="row m-5 d-none ">
+
+          <div class="col-md-6 col-12">
+            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación Del Cliente a Eliminar</label>
+            <input type="number" class="form-control" id="datoNumeroEliminar" placeholder="Número" >
+          </div>
+              
+          <br><br><br><br><br>
+          <div id="boton2" class="">
+            <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnconfirmareliminar" type="submit" >Confirmar</button>
+          </div>
+        </div>
+          <br><br>
+   
+
+      <section class="table-responsive border border-5 border-black m-5">
+        <table class="table text-center justify-content-center">
+          <thead>
+            <tr class="fs-4 gap-5 text-center justify-content-center">
+              <th scope="col">Número de <br>identificación</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Correo electrónico</th>
+              <th scope="col">Fecha de nacimiento</th>
+              <th scope="col">Nacionalidad</th>
+            </tr>
+          </thead>
+          
+          <tbody id="lista-clientes">
+          </tbody>
+        </table>
+      </section>
     </form>
 
 

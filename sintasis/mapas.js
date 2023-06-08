@@ -58,13 +58,20 @@ console.log(miMapa);
 // Comprobar si una clave existe en el Map
 console.log('¿Existe clave3?', miMapa.has('clave3'));
 
+var clientes = new Map()
 
+nombres = "hola"
+apellidos = "perooo"
+id = 212123
+telefono = "sadas"
+clientes.set(id,{nombres,apellidos, telefono})
 
-
+console.log(clientes.has("sadas"))
+ 
 // Recorrer el Map utilizando un bucle for...of
-for (const [miClave, miValor] of miMapa) {
-    console.log(miClave, miValor);
-}
+// for (const [miClave, miValor] of clientes) {
+//     console.log(miClave, miValor.telefono);
+// }
 
 
 

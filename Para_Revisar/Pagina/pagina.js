@@ -9,32 +9,11 @@ const divbtnconfirmar1 = document.getElementById("botones")
 const divbtnconfirmar2 = document.getElementById("boton2")
 const formularioAgregarClientes = document.getElementById("formularioAgregarClientes")
 const formularioEliminarClientes = document.getElementById("formulario-Eliminar-Clientes")
+const btnEditar = document.getElementById("btnconfirmarEditar2");
 
 
 const clientes = new Map()
 // clientes.set(2695802,{nombres:"Julian Jose",apellidos:"Lopez Arellano",telefono:"3132419753",correo:"julianjoselpz2019@gmail.com",fecha:"2003-09-17",nacionalidad:"Bucaramanges"})
-
-
-
-
-
-
-
-
-
-    btnConfirmarAgregar.addEventListener("click", function(event) {
-    event.preventDefault();
-    const id = document.getElementById("datoNumero").value;
-    const nombres = document.getElementById("datoNombres").value;
-    const apellidos = document.getElementById("datoApellidos").value;
-    const telefono = document.getElementById("datoTelefono").value;
-    const correo = document.getElementById("datoCorreo").value;
-    const fecha = document.getElementById("datoFecha").value;
-    const nacionalidad = document.getElementById("datoNacionalidad").value;
-
-    clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
-    formularioClientes.reset()
-})
 
 
 
@@ -63,16 +42,53 @@ function mostrar(pametro){
                 `;
         
             lugar.appendChild(parrafo);
+        }})}
+
+
+function agregar(){
+    btnConfirmarAgregar.addEventListener("click", function(event) {
+    event.preventDefault();
+    const id = document.getElementById("datoNumero").value;
+    const nombres = document.getElementById("datoNombres").value;
+    const apellidos = document.getElementById("datoApellidos").value;
+    const telefono = document.getElementById("datoTelefono").value;
+    const correo = document.getElementById("datoCorreo").value;
+    const fecha = document.getElementById("datoFecha").value;
+    const nacionalidad = document.getElementById("datoNacionalidad").value;
+
+    clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
+    formularioClientes.reset()
+    
+})}
         
-        }
-    })}
+
+
+
+
+function editar(){
+    btnEditar.addEventListener("click", function(event) {
+    event.preventDefault();
+    const id = document.getElementById("datoNombres2");
+   
+    const hola = 12323
     
+    id.innerHTML = hola
+    formularioClientes.reset()
+
+  })}    
+
+
+
     
-    mostrar(btnConfirmarAgregar)
     
 
 
-    divbtnconfirmar2.addEventListener('click', function(event) {
+
+
+
+
+function eliminar(){
+    btnConfirmarEliminar.addEventListener('click', function(event) {
     event.preventDefault();
    
     const idEliminar = document.getElementById("datoNumeroEliminar").value
@@ -86,14 +102,16 @@ function mostrar(pametro){
     if (clientes.has(idEliminar) == true){ 
         clientes.delete(idEliminar)
         formularioClientes.reset()
-        alert("Cliente eliminado de la lista")
+        alert("Cliente eliminado de la lista")}
+    })}
 
-    }
-    
-})
 
-mostrar(divbtnconfirmar2)
-
+agregar()
+mostrar(btnConfirmarAgregar)
+editar()
+mostrar(btnEditar)
+eliminar()
+mostrar(btnConfirmarEliminar)
 
 
 
@@ -111,6 +129,7 @@ btnAgregarClientes.addEventListener('click', function(event) {
     event.preventDefault();
     formularioAgregarClientes.classList.toggle('d-none');
     formularioEliminarClientes.classList.add('d-none');
+    formularioEditarClientes.classList.add('d-none');
 
 });
 
@@ -118,7 +137,17 @@ btnEliminarClientes.addEventListener('click', function(event) {
     event.preventDefault();
     formularioEliminarClientes.classList.toggle('d-none');
     formularioAgregarClientes.classList.add('d-none');
+    formularioEditarClientes.classList.add('d-none');
 
 });
 
+const formularioEditarClientes = document.getElementById("formularioEditarClientes")
 
+
+btnEditarClientes.addEventListener('click', function(event) {
+    event.preventDefault();
+    formularioEditarClientes.classList.toggle('d-none');
+    formularioAgregarClientes.classList.add('d-none');
+    formularioEliminarClientes.classList.add('d-none');
+
+})

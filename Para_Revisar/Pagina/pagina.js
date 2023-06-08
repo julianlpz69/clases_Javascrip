@@ -68,19 +68,19 @@ function agregar(){
 function editar(){
     btnEditar.addEventListener("click", function(event) {
     event.preventDefault();
-    const id = document.getElementById("datoNombres2");
-    const datoNombres2 = document.getElementById("datoNombres2").;
+    const id = document.getElementById("datoClienteEditar")
+    const datoNombres2 = document.getElementById("datoNombres2");
     const apellidos2 = document.getElementById("datoApellidos2");
     const telefono2 = document.getElementById("datoTelefono2");
     const correo2 = document.getElementById("datoCorreo2");
     const fecha2 = document.getElementById("datoFecha2");
     const nacionalidad2 = document.getElementById("datoNacionalidad2");
-   
-
-    datoNombres2.value = 
 
 
-  })}    
+    datoNombres2.value = clientes.get(id).nombres;
+
+
+})}    
 
 
 

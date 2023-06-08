@@ -14,4 +14,7 @@ console.log(clientes.has(212123))
 //     alert(miValor.telefono)
 // }
 
-clientes = 21312321,{titulo:"wewfwe",telefono:"dsfsdfsd"}
+
+
+
+clientes.get(id).nombres

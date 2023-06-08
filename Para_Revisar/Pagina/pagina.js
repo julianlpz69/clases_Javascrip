@@ -69,11 +69,16 @@ function editar(){
     btnEditar.addEventListener("click", function(event) {
     event.preventDefault();
     const id = document.getElementById("datoNombres2");
+    const datoNombres2 = document.getElementById("datoNombres2").;
+    const apellidos2 = document.getElementById("datoApellidos2");
+    const telefono2 = document.getElementById("datoTelefono2");
+    const correo2 = document.getElementById("datoCorreo2");
+    const fecha2 = document.getElementById("datoFecha2");
+    const nacionalidad2 = document.getElementById("datoNacionalidad2");
    
-    const hola = 12323
-    
-    id.innerHTML = hola
-    formularioClientes.reset()
+
+    datoNombres2.value = 
+
 
   })}    
 

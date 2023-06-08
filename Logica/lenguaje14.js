@@ -16,4 +16,3 @@ btn2.addEventListener("click",function eliminar(){
 
 
 
-

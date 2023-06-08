@@ -1,4 +1,11 @@
-section{
-    width: 100% !important;
-    background-color: red;
+#list{
+    margin-left: 15rem;
+}
+
+#opc-clientes{
+    margin-left: 25%;
+}
+
+label{
+    margin-top: 20px !important;
 }

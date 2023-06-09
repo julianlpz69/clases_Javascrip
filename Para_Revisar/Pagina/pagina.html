@@ -26,7 +26,7 @@
                   <a class="nav-link text-white fs-5 fw-bold" id="clientes-Link" href="#">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fs-5 fw-bold"  id="rutas-Link" href="#">Rutas</a>
+                    <a class="nav-link text-white fs-5 fw-bold"  id="rutasLink" href="#">Rutas</a>
                   </li>
                 <li class="nav-item">
                     <a class="nav-link text-white fs-5 fw-bold" id="tiquetes-Link" href="#">Tiquetes</a>
@@ -121,7 +121,7 @@
             <div id="boton2" class="">
                 <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnconfirmarEditar2" type="submit" >Confirmar</button>
             </div>
-              <br><br><br><br><br><br>
+              
 
             <div class="row d-none" id="formularioEditar">
               
@@ -181,6 +181,8 @@
    
 
       <section class="table-responsive border border-5 border-black m-5">
+        <br>
+        <h2 class="text-center fw-bold fs-1">Lista de Datos De Los Clientes</h2>
         <table class="table text-center justify-content-center">
           <thead>
             <tr class="fs-4 gap-5 text-center justify-content-center">
@@ -215,25 +217,20 @@
 
 
 
-    <form id="formularioRutas" class="container-fluid ">
+    <form id="formularioRutas" class="container-fluid d-none">
       <br><br><br>
       <h1 class="text-center">Interfaz para el control de Rutas de la empresa</h1>
-      <br>
-      <br><br><br>
+      <br><br>
       
       <br>
-      <div id="c" class="navbar navbar-expand-lg align-items-center navbar-dark bg-dark text-center justify-content-center w-50">
-          <ul class="navbar-nav text-center justify-content-center align-items-center gap-3">
-              <li class="nav-item">
-              <button class="nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-Agregar-clientes" href="#">Agregar Ruta</button>
-              </li>
-          </ul>
+      <div id="btnAgregarRuta" class="container text-center w-100">
+              <button class="w-50 text-center nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-AgregarRuta" href="#">Agregar Ruta</button>
       </div>
 
       <br>
 
       
-      <div id="formularioAgregarRutas" class="row">
+      <div id="formularioAgregarRutas" class="row d-none">
 
   
         <div class="col-md-6 col-12">
@@ -272,6 +269,8 @@
 
 
       <section class="table-responsive border border-5 border-black m-5">
+        <br>
+        <h2 class="text-center fw-bold fs-1">Lista de Datos De Las Rutas</h2>
         <table class="table text-center justify-content-center">
           <thead>
             <tr class="fs-5 gap-5 text-center justify-content-center">

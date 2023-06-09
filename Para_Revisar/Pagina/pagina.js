@@ -1,4 +1,5 @@
 const botonClientes1 = document.getElementById("clientes-Link")
+const botonRutas = document.getElementById("rutasLink")
 const btnAgregarClientes = document.getElementById("btn-Agregar-clientes")
 const btnEditarClientes = document.getElementById("btn-Editar-clientes")
 const btnEliminarClientes = document.getElementById("btn-Eliminar-clientes")
@@ -11,6 +12,7 @@ const formularioAgregarClientes = document.getElementById("formularioAgregarClie
 const formularioEliminarClientes = document.getElementById("formulario-Eliminar-Clientes")
 const formularioEditarClientes = document.getElementById("formularioEditarClientes")
 const formularioEditar = document.getElementById("formularioEditar")
+const formularioRutas = document.getElementById("formularioRutas")
 
 
 
@@ -131,7 +133,7 @@ function eliminar(){
         formularioClientes.reset()
         alert("Cliente eliminado de la lista")}
     })}
-
+formularioRutas
 
 agregar()
 mostrar(btnConfirmarAgregar)
@@ -146,6 +148,17 @@ mostrar(btnConfirmarEliminar)
 botonClientes1.addEventListener('click', function(event) {
     event.preventDefault();
     formularioClientes.classList.toggle('d-none');
+    formularioRutas.classList.add('d-none');
+
+    
+
+});
+
+
+botonRutas.addEventListener('click', function(event) {
+    event.preventDefault();
+    formularioRutas.classList.toggle('d-none');
+    formularioClientes.classList.add('d-none');
 
 });
 
@@ -175,7 +188,15 @@ btnEditarClientes.addEventListener('click', function(event) {
 })
 
 
+const btnAgregarRutas = document.getElementById("btn-AgregarRuta");
+const formularioAgregarRutas = document.getElementById("formularioAgregarRutas");
 
+
+btnAgregarRutas.addEventListener('click', function(event) {
+    event.preventDefault();
+    formularioAgregarRutas.classList.toggle('d-none');
+
+})
 
 
 
@@ -188,7 +209,6 @@ btnEditarClientes.addEventListener('click', function(event) {
 
 const rutas = new Map()
 var numero = 1
-const formularioRutas = document.getElementById('formularioRutas');
 const btnConfirmarAgregarRuta = document.getElementById('btnConfirmarAgregarRuta');
 
 function mostrarRutas(pametro){

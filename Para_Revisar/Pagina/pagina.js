@@ -9,11 +9,12 @@ const divbtnconfirmar1 = document.getElementById("botones")
 const divbtnconfirmar2 = document.getElementById("boton2")
 const formularioAgregarClientes = document.getElementById("formularioAgregarClientes")
 const formularioEliminarClientes = document.getElementById("formulario-Eliminar-Clientes")
-const btnEditar = document.getElementById("btnconfirmarEditar2");
+const formularioEditarClientes = document.getElementById("formularioEditarClientes")
+const formularioEditar = document.getElementById("formularioEditar")
+
 
 
 const clientes = new Map()
-// clientes.set(2695802,{nombres:"Julian Jose",apellidos:"Lopez Arellano",telefono:"3132419753",correo:"julianjoselpz2019@gmail.com",fecha:"2003-09-17",nacionalidad:"Bucaramanges"})
 
 
 
@@ -62,40 +63,61 @@ function agregar(){
 })}
         
 
-
-
+const btnEditar = document.getElementById("btnconfirmarEditar2");
 
 function editar(){
     btnEditar.addEventListener("click", function(event) {
     event.preventDefault();
-    const id = document.getElementById("datoClienteEditar")
+    
+
+    formularioEditar.classList.remove('d-none')
+    const idNombre = document.getElementById("datoClienteEditar").value
+
     const datoNombres2 = document.getElementById("datoNombres2");
-    const apellidos2 = document.getElementById("datoApellidos2");
-    const telefono2 = document.getElementById("datoTelefono2");
-    const correo2 = document.getElementById("datoCorreo2");
-    const fecha2 = document.getElementById("datoFecha2");
-    const nacionalidad2 = document.getElementById("datoNacionalidad2");
-
-
-    datoNombres2.value = clientes.get(id).nombres;
-
-
-})}    
-
+    const datoApellidos2 = document.getElementById("datoApellidos2");
+    const datoTelefono2 = document.getElementById("datoTelefono2");
+    const datoCorreo2 = document.getElementById("datoCorreo2");
+    const datoFecha2 = document.getElementById("datoFecha2");
+    const datoNacionalidad2 = document.getElementById("datoNacionalidad2");
 
 
     
+    datoNombres2.value = clientes.get(idNombre).nombres;
+    datoApellidos2.value = clientes.get(idNombre).apellidos;
+    datoTelefono2.value = clientes.get(idNombre).telefono;
+    datoCorreo2.value = clientes.get(idNombre).correo;
+    datoFecha2.value = clientes.get(idNombre).fecha;
+    datoNacionalidad2.value = clientes.get(idNombre).nacionalidad;
+
+})}
+
+
+const btnConfirmar = document.getElementById("btnConfirmarEditar")
+
+function editar2(){
+    btnConfirmar.addEventListener("click", function(event) {
+    event.preventDefault();
+    const id = document.getElementById("datoClienteEditar").value;
+    const nombres = document.getElementById("datoNombres2").value;
+    const apellidos = document.getElementById("datoApellidos2").value;
+    const telefono = document.getElementById("datoTelefono2").value;
+    const correo = document.getElementById("datoCorreo2").value;
+    const fecha = document.getElementById("datoFecha2").value;
+    const nacionalidad = document.getElementById("datoNacionalidad2").value;
+
+    clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
+    formularioClientes.reset()
+    formularioEditar.classList.add('d-none')
+
+    alert("Los datos del cliente han sido modificados Exitosamente")
     
-
-
-
-
+})}
 
 
 function eliminar(){
     btnConfirmarEliminar.addEventListener('click', function(event) {
     event.preventDefault();
-   
+
     const idEliminar = document.getElementById("datoNumeroEliminar").value
 
     if (clientes.has(idEliminar) == false){ 
@@ -115,12 +137,10 @@ agregar()
 mostrar(btnConfirmarAgregar)
 editar()
 mostrar(btnEditar)
+editar2()
+mostrar(btnConfirmar)
 eliminar()
 mostrar(btnConfirmarEliminar)
-
-
-
-
 
 
 botonClientes1.addEventListener('click', function(event) {
@@ -146,9 +166,6 @@ btnEliminarClientes.addEventListener('click', function(event) {
 
 });
 
-const formularioEditarClientes = document.getElementById("formularioEditarClientes")
-
-
 btnEditarClientes.addEventListener('click', function(event) {
     event.preventDefault();
     formularioEditarClientes.classList.toggle('d-none');
@@ -156,3 +173,82 @@ btnEditarClientes.addEventListener('click', function(event) {
     formularioEliminarClientes.classList.add('d-none');
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+const rutas = new Map()
+var numero = 1
+const formularioRutas = document.getElementById('formularioRutas');
+const btnConfirmarAgregarRuta = document.getElementById('btnConfirmarAgregarRuta');
+
+function mostrarRutas(pametro){
+    pametro.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        const lugar = document.getElementById("listaRutas")
+        const parrafo = document.createElement("tr")
+    
+        parrafo.id=`holas${numero}`
+    
+        parrafo.innerHTML=
+            `<td>${numero}</td>
+            <td>${rutas.get(numero).nombre}</td>
+            <td>${rutas.get(numero).valor}</td>
+            <td>${rutas.get(numero).origen}</td>
+            <td>${rutas.get(numero).destino}</td>
+            <td>${rutas.get(numero).puntos}</td>
+            <td><button type="submit" id="holass">Eliminar</button></td>
+            `;
+
+
+        
+        lugar.appendChild(parrafo);
+    
+                
+        lugar.appendChild(parrafo);
+        numero = numero + 1
+    
+        var btn2 = document.getElementById(`holass`);
+        const lugar2 = document.getElementById("listaRutas")
+
+        btn2.addEventListener("click",function eliminar(){
+        parrafo.remove()
+        })
+        })}
+
+
+
+
+
+
+
+function agregarRuta(){
+    btnConfirmarAgregarRuta.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('datoNombreRuta').value;
+    const valor = document.getElementById('datoValorRuta').value;
+    const origen = document.getElementById('datoOrigenRuta').value;
+    const destino = document.getElementById('datoDestinoRuta').value;
+    const puntos = document.getElementById('datoPuntosRuta').value;
+
+    rutas.set(numero,{nombre,valor,origen,destino,puntos})
+    formularioRutas.reset()
+    
+})}
+
+
+
+agregarRuta()
+mostrarRutas(btnConfirmarAgregarRuta)
+
+

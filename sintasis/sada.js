@@ -17,4 +17,4 @@ console.log(clientes.has(212123))
 
 
 
-clientes.get(id).nombres
+clientes.get()

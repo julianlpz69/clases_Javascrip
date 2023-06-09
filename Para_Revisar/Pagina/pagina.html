@@ -8,37 +8,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <header class="bg-black fs-5 fw-bold text-white text-center container-fluid">Pagina Inicio</header>
+    <header class="bg-black fw-bold text-white text-center container-fluid">Todo lo que buscas lo encuentras aqui</header>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark container-fluid">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="" alt="">adfadf</a>
-          <a class="navbar-brand" href="#"><img src="" alt="">adfadf</a>
+          <a class="navbar-brand" href="#"><img src="" alt=""><img src="Apple-Logo-Background-PNG.png"></a>
+          <a class="navbar-brand" href="#"><img src="" alt="">Campus TravelExp</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse col-6 justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav gap-5">
                 <li class="nav-item">
-                  <a class="nav-link" id="inicio-link" href="#">Inicio</a>
+                  <a class="nav-link text-white fs-5 fw-bold" id="inicio-link" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="clientes-Link" href="#">Clientes</a>
+                  <a class="nav-link text-white fs-5 fw-bold" id="clientes-Link" href="#">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="rutas-Link" href="#">Rutas</a>
+                    <a class="nav-link text-white fs-5 fw-bold"  id="rutas-Link" href="#">Rutas</a>
                   </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="tiquetes-Link" href="#">Tiquetes</a>
+                    <a class="nav-link text-white fs-5 fw-bold" id="tiquetes-Link" href="#">Tiquetes</a>
                 </li>
-               
               </ul>
           </div>
         </div>
       </nav>
 
 
-    <form id="formularioClientes" class="container-fluid">
+    <form id="formularioClientes" class="container-fluid d-none">
       <br><br><br>
       <h1 class="text-center">Interfaz para el control de los clientes de la empresa</h1>
       <br>
@@ -108,77 +107,63 @@
       </div>
         <br><br>
 
-
-
-
-
-
-
-
-
-
-
         <div id="formularioEditarClientes" class="row d-none">
 
 
           <div id="formulario-Eliminar-Client" class="row m-5">
 
             <div class="col-md-6 col-12">
-              <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación Del Cliente a Modificar</label>
-              <input type="number" class="form-control" id="datoClienteEditar" placeholder="Número" >
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación Del Cliente a Modificar</label>
+                <input type="number" class="form-control" id="datoClienteEditar" placeholder="Número" >
             </div>
-                
-            <br><br><br><br><br>
+                  
+              <br><br><br><br><br>
             <div id="boton2" class="">
-              <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnconfirmarEditar2" type="submit" >Confirmar</button>
+                <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnconfirmarEditar2" type="submit" >Confirmar</button>
             </div>
-          </div>
-            <br><br>
+              <br><br><br><br><br><br>
 
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombres</label>
-            <input type="text" class="form-control" id="datoNombres2" placeholder="Nombres" >
-          </div>
+            <div class="row d-none" id="formularioEditar">
               
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Apellidos</label>
-            <input type="text" class="form-control" id="datoApellidos2" placeholder="Apellidos" >
-          </div>
+              <h2 class="fs-1 fw-bold">Modifica los datos que desees cambiar </h2>
+              <br><br>
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombres</label>
+                <input type="text" class="form-control" id="datoNombres2" placeholder="Nombres" >
+              </div>
+                  
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Apellidos</label>
+                <input type="text" class="form-control" id="datoApellidos2" placeholder="Apellidos" >
+              </div>
+                  
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Teléfono</label>
+                <input type="number" class="form-control" id="datoTelefono2" placeholder="Teléfono" >
+              </div>
               
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Teléfono</label>
-            <input type="number" class="form-control" id="datoTelefono2" placeholder="Teléfono" >
-          </div>
-          
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Correo electrónico</label>
-            <input type="email" class="form-control" id="datoCorreo2" placeholder="Correo electrónico" >
-          </div>
-          
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Fecha de nacimiento</label>
-            <input type="date" class="form-control" id="datoFecha2" placeholder="Fecha de nacimiento" >
-          </div>
-          
-          <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nacionalidad</label>
-            <input type="text" class="form-control" id="datoNacionalidad2" placeholder="Nacionalidad" >
-          </div>
-          
-          <br><br><br><br><br>
-          <div id="botones" class="text-center">
-            <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarEditar" type="submit" >Confirmar</button>
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Correo electrónico</label>
+                <input type="email" class="form-control" id="datoCorreo2" placeholder="Correo electrónico" >
+              </div>
+              
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="datoFecha2" placeholder="Fecha de nacimiento" >
+              </div>
+              
+              <div class="col-md-6 col-12">
+                <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nacionalidad</label>
+                <input type="text" class="form-control" id="datoNacionalidad2" placeholder="Nacionalidad" >
+              </div>
+              
+                 <br><br><br><br><br><br>
+              <div id="botones" class="text-center">
+                <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarEditar" type="submit" >Confirmar</button>
+              </div>
+            </div>
           </div>
         </div>
-          <br><br>
-
-
-
-
-
-
-
-
 
         <div id="formulario-Eliminar-Clientes" class="row m-5 d-none ">
 
@@ -214,6 +199,98 @@
         </table>
       </section>
     </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form id="formularioRutas" class="container-fluid ">
+      <br><br><br>
+      <h1 class="text-center">Interfaz para el control de Rutas de la empresa</h1>
+      <br>
+      <br><br><br>
+      
+      <br>
+      <div id="c" class="navbar navbar-expand-lg align-items-center navbar-dark bg-dark text-center justify-content-center w-50">
+          <ul class="navbar-nav text-center justify-content-center align-items-center gap-3">
+              <li class="nav-item">
+              <button class="nav-link bg-secondary-subtle rounded-pill text-black fs-4 fw-bold" id="btn-Agregar-clientes" href="#">Agregar Ruta</button>
+              </li>
+          </ul>
+      </div>
+
+      <br>
+
+      
+      <div id="formularioAgregarRutas" class="row">
+
+  
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombre de la ruta</label>
+          <input type="text" class="form-control" id="datoNombreRuta" placeholder="Nombre" >
+        </div>
+            
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Valor Tiquete</label>
+          <input type="number" class="form-control" id="datoValorRuta" placeholder="Valor" >
+        </div>
+            
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Ciudad origen</label>
+          <input type="text" class="form-control" id="datoOrigenRuta" placeholder="Origen" >
+        </div>
+        
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Ciudad destino</label>
+          <input type="text" class="form-control" id="datoDestinoRuta" placeholder="Destino" >
+        </div>
+        
+        <div class="col-md-6 col-12">
+          <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Puntos para fidelización</label>
+          <input type="number" class="form-control" id="datoPuntosRuta" placeholder="Puntos" >
+        </div>
+        
+        
+      
+        <div id="botones2" class=" col-md-6 col-12 mx-auto">
+          <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarAgregarRuta" type="submit" >Confirmar</button>
+        </div>
+      </div>
+        <br><br>
+
+
+
+      <section class="table-responsive border border-5 border-black m-5">
+        <table class="table text-center justify-content-center">
+          <thead>
+            <tr class="fs-5 gap-5 text-center justify-content-center">
+              <th scope="col">ID</th>
+              <th scope="col">Nombre De la Ruta</th>
+              <th scope="col">Valor Tique</th>
+              <th scope="col">Ciudad Origen</th>
+              <th scope="col">Ciudad Destino</th>
+              <th scope="col">Puntos Para <br> Fidelizacion</th>
+            </tr>
+          </thead>
+          
+          <tbody id="listaRutas">
+
+          </tbody>
+        </table>
+      </section>
+    </form>
+
 
 
 

@@ -6,7 +6,7 @@
     margin-left: 15rem;
 }
 
-#opc-clientes{
+#opc-clientes , #opc-clientes2{
     margin-left: 25%;
 }
 
@@ -17,4 +17,13 @@ label{
 #formulario-Clientes > h1{
     font-size: 3.5rem;
     font-family:fantasy;
+}
+
+img{
+    width: 80px;
+}
+
+#botones2{
+    margin-top: 60px;
+
 }

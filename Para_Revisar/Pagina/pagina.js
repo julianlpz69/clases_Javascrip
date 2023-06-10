@@ -13,6 +13,7 @@ const formularioEliminarClientes = document.getElementById("formulario-Eliminar-
 const formularioEditarClientes = document.getElementById("formularioEditarClientes")
 const formularioEditar = document.getElementById("formularioEditar")
 const formularioRutas = document.getElementById("formularioRutas")
+const formularioClientesCompra = document.getElementById("formularioClientesCompra")
 
 
 
@@ -26,7 +27,9 @@ function mostrar(pametro){
         event.preventDefault();
         
         const lugar = document.getElementById("lista-clientes")
+        const lugar2 = document.getElementById("tablaClientesCompra")
         lugar.innerHTML=""
+        lugar2.innerHTML=`<option selected>Seleciona Al Cliente</option>`
     
         for (const [miClave,miValor] of clientes) {
             const lugar = document.getElementById("lista-clientes")
@@ -45,6 +48,12 @@ function mostrar(pametro){
                 `;
         
             lugar.appendChild(parrafo);
+
+
+            const parrafo2 = document.createElement("option")
+            parrafo2.innerHTML=`${miValor.nombres}`
+    
+            lugar2.appendChild(parrafo2);
         }})}
 
 
@@ -61,6 +70,7 @@ function agregar(){
 
     clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
     formularioClientes.reset()
+    formularioClientesCompra.reset()
     
 })}
         
@@ -133,7 +143,6 @@ function eliminar(){
         formularioClientes.reset()
         alert("Cliente eliminado de la lista")}
     })}
-formularioRutas
 
 agregar()
 mostrar(btnConfirmarAgregar)
@@ -211,41 +220,65 @@ const rutas = new Map()
 var numero = 1
 const btnConfirmarAgregarRuta = document.getElementById('btnConfirmarAgregarRuta');
 
+
+
+
 function mostrarRutas(pametro){
     pametro.addEventListener("click", function(event) {
         event.preventDefault();
         
-        const lugar = document.getElementById("listaRutas")
-        const parrafo = document.createElement("tr")
+        const lugar3 = document.getElementById("listaRutas")
+        const lugar4 = document.getElementById("tablaClientesComprar2")
+        lugar3.innerHTML=""
+        lugar4.innerHTML=`<option selected>Seleciona A LA Ruta</option>`
     
-        parrafo.id=`holas${numero}`
-    
-        parrafo.innerHTML=
-            `<td>${numero}</td>
-            <td>${rutas.get(numero).nombre}</td>
-            <td>${rutas.get(numero).valor}</td>
-            <td>${rutas.get(numero).origen}</td>
-            <td>${rutas.get(numero).destino}</td>
-            <td>${rutas.get(numero).puntos}</td>
-            <td><button type="submit" id="holass">Eliminar</button></td>
-            `;
-
-
+        for (const [miClave,miValor] of rutas) {
+            const lugar = document.getElementById("listaRutas")
+            const parrafo = document.createElement("tr")
         
-        lugar.appendChild(parrafo);
-    
+            parrafo.id=`${miClave}`
+        
+            parrafo.innerHTML=
+            `<td>${miClave}</td>
+            <td>${miValor.nombre}</td>
+            <td>${miValor.valor}</td>
+            <td>${miValor.origen}</td>
+            <td>${miValor.destino}</td>
+            <td>${miValor.puntos}</td>
+            <td><button onClick="onDelete(this),mostrarRutas(this)" type="button" id="1" class="btn btn-danger">Eliminar</button></td>
                 
-        lugar.appendChild(parrafo);
+                `;
+        
+            lugar.appendChild(parrafo);
+
+
+        const lugar2 = document.getElementById("tablaClientesComprar2")
+        const parrafo2 = document.createElement("option")
+        parrafo2.id=`s${miClave}`
+        parrafo2.innerHTML=`${rutas.get(numero).nombre}}`
+
+        lugar2.appendChild(parrafo2);
+
         numero = numero + 1
-    
-        var btn2 = document.getElementById(`holass`);
-        const lugar2 = document.getElementById("listaRutas")
+        }})}
 
-        btn2.addEventListener("click",function eliminar(){
-        parrafo.remove()
-        })
-        })}
 
+
+
+
+        var numero2 = 1
+        function onDelete(button) {
+            let confirmar = confirm("¿Estas seguro de eliminar esta Ruta?")
+            if (confirmar==true){
+            const row = document.getElementById(numero);
+            const row2 = document.getElementById(`s${numero}`);
+            rutas.delete(numero2);
+            console.log(rutas)
+            row.remove();
+            row2.remove();
+            
+            numero2 = numero2 + 1
+            }}
 
 
 
@@ -263,6 +296,7 @@ function agregarRuta(){
 
     rutas.set(numero,{nombre,valor,origen,destino,puntos})
     formularioRutas.reset()
+    formularioClientesCompra.reset()
     
 })}
 

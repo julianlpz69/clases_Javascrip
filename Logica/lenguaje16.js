@@ -71,7 +71,7 @@ function botones (pametro1,parametro2){
 })}
 
 
-btn1.addEventListener("onclick" , botones(formulario2,formulario11))
+btn1.addEventListener("submit" , botones(formulario2,formulario11))
 
 btn2.addEventListener("submit" , botones(listap,formulario12))
 

@@ -23,7 +23,7 @@
                   <a class="nav-link text-white fs-5 fw-bold" id="inicio-link" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white fs-5 fw-bold" id="clientes-Link" href="#">Clientes</a>
+                  <a type="submit" class="nav-link text-white fs-5 fw-bold" id="clientes-Link" href="#">Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white fs-5 fw-bold"  id="rutasLink" href="#">Rutas</a>
@@ -70,37 +70,37 @@
 
         <div class="col-md-6 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Número de identificación</label>
-          <input type="number" class="form-control" id="datoNumero" placeholder="Número" >
+          <input type="number" class="form-control" id="datoNumero" placeholder="Número" required >
         </div>
             
         <div class="col-md-6 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nombres</label>
-          <input type="text" class="form-control" id="datoNombres" placeholder="Nombres" >
+          <input type="text" class="form-control" id="datoNombres" placeholder="Nombres" required>
         </div>
             
         <div class="col-md-6 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Apellidos</label>
-          <input type="text" class="form-control" id="datoApellidos" placeholder="Apellidos" >
+          <input type="text" class="form-control" id="datoApellidos" placeholder="Apellidos" required>
         </div>
             
         <div class="col-md-6 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Teléfono</label>
-          <input type="number" class="form-control" id="datoTelefono" placeholder="Teléfono" >
+          <input type="number" class="form-control" id="datoTelefono" placeholder="Teléfono" required>
         </div>
         
         <div class="col-md-4 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Correo electrónico</label>
-          <input type="email" class="form-control" id="datoCorreo" placeholder="Correo electrónico" >
+          <input type="email" class="form-control" id="datoCorreo" placeholder="Correo electrónico" required>
         </div>
         
         <div class="col-md-4 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Fecha de nacimiento</label>
-          <input type="date" class="form-control" id="datoFecha" placeholder="Fecha de nacimiento" >
+          <input type="date" class="form-control" id="datoFecha" placeholder="Fecha de nacimiento" required>
         </div>
         
         <div class="col-md-4 col-12">
           <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Nacionalidad</label>
-          <input type="text" class="form-control" id="datoNacionalidad" placeholder="Nacionalidad" >
+          <input type="text" class="form-control" id="datoNacionalidad" placeholder="Nacionalidad" required>
         </div>
         
         <br><br><br><br><br>
@@ -304,7 +304,7 @@
       <br><br>
       <h2 class="text-center fs-1 fw-bold">Interfaz Para La Compra De Tiquetes</h2>
       <br><br>
-      <div class="row">
+      <div class="row" id="opcionesTiquete">
         <div class="col">
           <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="tablaClientesCompra">
           <option selected>Seleciona Al Cliente</option>
@@ -313,8 +313,19 @@
           <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="tablaClientesComprar2" >
           <option selected>Selecciona LA Ruta</option>
         </select></div>
+
+        <div id="" class=" col-md col-12 mx-auto">
+          <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarDatosTiquete" type="submit" >Confirmar Datos</button>
+        </div>
       </div>
+
+      <section class="d-flex text-center justify-content-center align-items-center" id="cardsTiquetes">
+    
+
+      </section>
     </form>
+
+
 
 
 

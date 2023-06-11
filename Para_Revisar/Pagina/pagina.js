@@ -51,6 +51,7 @@ function mostrar(pametro){
 
 
             const parrafo2 = document.createElement("option")
+            parrafo2.value= miClave
             parrafo2.innerHTML=`${miValor.nombres}`
     
             lugar2.appendChild(parrafo2);
@@ -68,16 +69,20 @@ function agregar(){
     const fecha = document.getElementById("datoFecha").value;
     const nacionalidad = document.getElementById("datoNacionalidad").value;
 
-    clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
-    formularioClientes.reset()
-    formularioClientesCompra.reset()
-    
+    if (telefono < 0 ){
+        alert("ingrese un valor aceptable")
+    }
+    else{
+        clientes.set(id,{nombres,apellidos,telefono,correo,fecha,nacionalidad})
+        formularioClientes.reset()
+        formularioClientesCompra.reset()} 
 })}
         
 
 const btnEditar = document.getElementById("btnconfirmarEditar2");
 
 function editar(){
+    const btnEditar = document.getElementById("btnconfirmarEditar2");
     btnEditar.addEventListener("click", function(event) {
     event.preventDefault();
     
@@ -255,7 +260,8 @@ function mostrarRutas(pametro){
         const lugar2 = document.getElementById("tablaClientesComprar2")
         const parrafo2 = document.createElement("option")
         parrafo2.id=`s${miClave}`
-        parrafo2.innerHTML=`${rutas.get(numero).nombre}}`
+        parrafo2.value=`${miClave}`
+        parrafo2.innerHTML=`${miValor.nombre}`
 
         lugar2.appendChild(parrafo2);
 
@@ -270,10 +276,10 @@ function mostrarRutas(pametro){
         function onDelete(button) {
             let confirmar = confirm("¿Estas seguro de eliminar esta Ruta?")
             if (confirmar==true){
-            const row = document.getElementById(numero);
-            const row2 = document.getElementById(`s${numero}`);
+            const row = document.getElementById(numero2);
+            const row2 = document.getElementById(`s${numero2}`);
             rutas.delete(numero2);
-            console.log(rutas)
+            alert(rutas)
             row.remove();
             row2.remove();
             
@@ -284,7 +290,7 @@ function mostrarRutas(pametro){
 
 
 
-
+var numero3 = 1
 function agregarRuta(){
     btnConfirmarAgregarRuta.addEventListener("click", function(event) {
     event.preventDefault();
@@ -294,9 +300,14 @@ function agregarRuta(){
     const destino = document.getElementById('datoDestinoRuta').value;
     const puntos = document.getElementById('datoPuntosRuta').value;
 
-    rutas.set(numero,{nombre,valor,origen,destino,puntos})
+    if (valor < 0 || isNaN(Number(valor)) ){
+        alert("ingrese un valor aceptable")
+    }
+    else{
+    rutas.set(numero3,{nombre,valor,origen,destino,puntos})
     formularioRutas.reset()
     formularioClientesCompra.reset()
+    numero3 = numero3 + 1}
     
 })}
 
@@ -306,3 +317,104 @@ agregarRuta()
 mostrarRutas(btnConfirmarAgregarRuta)
 
 
+
+const btnConfirmarDatosTiquete = document.getElementById("btnConfirmarDatosTiquete")
+const cardsTiquetes = document.getElementById("cardsTiquetes")
+const opcionesTiquete = document.getElementById("opcionesTiquete")
+
+
+
+
+function agregarTiquete(){
+    btnConfirmarDatosTiquete.addEventListener("click", function(event) {
+    event.preventDefault();
+    const parrafo = document.createElement("div")
+    parrafo.classList=("row text-center")
+    parrafo.id=`idTiquete`
+    const nombreCliente = document.getElementById("tablaClientesCompra").value
+    const nombreRuta = document.getElementById("tablaClientesComprar2").value
+    
+    if(nombreCliente== "Seleciona Al Cliente" || nombreRuta== "Selecciona LA Ruta"){
+        alert("Seleccion Opciones Validas")
+
+    }
+
+    else {
+    const nombreCliente2 = clientes.get(nombreCliente).nombres
+    const nombreRuta2 = rutas.get(Number(nombreRuta)).nombre
+    const precioRuta2 = rutas.get(Number(nombreRuta)).valor
+    const precioRutaImpuestos = Number(precioRuta2) + ((Number(precioRuta2)/100)*16)+((Number(precioRuta2)/100)*4)
+
+
+
+    parrafo.innerHTML=
+    `<div class="card text-center boerder border-5 border-black justify-content-center align-items-center" style="width: 50rem;">
+    <h2 class="fs-1 fw-bold" > Confirmar Compra </h2>
+    <img src="logoTiquetes.png" class="w-50 h-50 text-center" alt="...">
+    <div class="card-body">
+    <table class="table text-center justify-content-center">
+          <thead>
+            <tr class="fs-5" id="listaTiquete2">
+              <th scope="col">Nombre<br> Cliente</th>
+              <th scope="col">Nombre<br> Ruta</th>
+              <th scope="col">Valor<br> Tiquete</th>
+              <th scope="col">Valor Tiquete <br> Con Tax</th>
+            </tr>
+          </thead>
+          <td>${nombreCliente2}</td>
+          <td>${nombreRuta2}</td>
+          <td>${precioRuta2}</td>
+          <td>${precioRutaImpuestos}</td>
+          <tbody id="listaRutas">
+
+          </tbody>
+        </table>
+    </div>
+    <div class="card-body">
+    <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarDatosTiquete22" type="submit" >Confirmar</button>
+    <button class="fs-3 text-center bg-dark text-white fw-bold" id="btnConfirmarDatosTiquete33" type="submit" >Cancelar</button>
+    </div>
+  </div>
+        `;
+
+    cardsTiquetes.appendChild(parrafo);
+    opcionesTiquete.classList.add('d-none')}
+
+
+    
+})}
+
+
+
+
+const btnConfirmarDatosTiquete22 = document.getElementById("btnConfirmarDatosTiquete22")
+
+
+function confirmarTiquete(){
+    btnConfirmarDatosTiquete22.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    alert("Se han registrado los p")
+
+    
+
+
+    
+})}
+
+const btnConfirmarDatosTiquete33 = document.getElementById("btnConfirmarDatosTiquete33")
+
+function CancelarTiquete(){
+    btnConfirmarDatosTiquete33.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    alert("peoss")
+
+    
+
+
+    
+})}
+agregarTiquete()
+confirmarTiquete()
+CancelarTiquete()
